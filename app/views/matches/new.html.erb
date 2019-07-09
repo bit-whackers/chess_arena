@@ -1,0 +1,6 @@
+<h1>Start a new match</h1>
+<%= simple_form_for @match do |f| %>
+	<%= f.input :name %>
+	<br />
+	<%= f.submit 'Create', class: 'btn btn-primary' %>
+<% end %>
