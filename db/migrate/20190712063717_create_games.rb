@@ -5,7 +5,7 @@ class CreateGames < ActiveRecord::Migration[5.2]
       t.integer :white_player_id
       t.integer :losing_player_id
       t.integer :turn_player_id
-      t.boolean :draw      
+      draw      :boolean   
 
       t.timestamps
     end
