@@ -9,6 +9,9 @@ class CreateGames < ActiveRecord::Migration[5.2]
 
       t.timestamps
     end
-    add_index :games, :black_player_id, :white_player_id, :losing_player_id, :turn_player_id
+    add_index :games, :black_player_id
+    add_index :games, :white_player_id
+    add_index :games, :losing_player_id
+    add_index :games, :turn_player_id
   end
 end
