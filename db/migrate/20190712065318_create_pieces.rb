@@ -12,10 +12,10 @@ class CreatePieces < ActiveRecord::Migration[5.2]
 
       t.timestamps
     end
-    add_index :peices, :piece_type
-    add_index :peices, :x_location
-    add_index :peices, :y_location
-    add_index :peices, :game_id 
+    add_index :pieces, :piece_type
+    add_index :pieces, :x_location
+    add_index :pieces, :y_location
+    add_index :pieces, :game_id 
     add_index :pieces, :player_id
   end
 end
