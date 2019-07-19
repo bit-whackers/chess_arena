@@ -1,39 +1,62 @@
 class MatchesController < ApplicationController
-
-	def index
-		@matches = Match.all
-	end
-
-	def new
-		@match = Match.new
-	end
+    before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
 
-	def create
-		Match.create(match_params)
-		redirect_to root_path
-	end
+  def index
+    @matches = Match.all
+  end
+
+  def new
+    @match = Match.new
+  end
 
 
-	def show
-		@match = Match.find(params[:id])
-	end
+  def create
+    @match = current_user.matches.create(match_params)
 
-	def edit
-		@match = Match.find(params[:id])
-	end
+    if @match.valid?
+      redirect_to matches_path
+    else
+      render :new, status: :unprocessable_entity
+    end
+
+  end
 
 
-	def update
-		@match = Match.find(params[:id])
-		@match.update_attributes(match_params)
-		redirect_to root_path
-	end
+  def show
+    @match = Match.find(params[:id])
+  end
 
-	private
+  def edit
+    @match = Match.find(params[:id])
+  end
 
-	def match_params
-		params.require(:match).permit(:name)
-	end
+
+  def update
+    @match = Match.find(params[:id])
+    if @match.user != current_user
+      return render plain: 'Not Allowed', status: :forbidden
+    end
+
+    @match.update_attributes(match_params)
+
+    if @match.valid?
+      redirect_to root_path
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+  
+  def destroy
+    @match = Match.find(params[:id])
+    @match.destroy
+    redirect_to matches_path
+  end
+
+  private
+
+  def match_params
+    params.require(:match).permit(:name)
+  end
 
 end

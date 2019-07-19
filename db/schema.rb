@@ -10,15 +10,69 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_09_025803) do
+
+ActiveRecord::Schema.define(version: 2019_07_17_203116) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "games", force: :cascade do |t|
+    t.integer "black_player_id"
+    t.integer "white_player_id"
+    t.integer "losing_player_id"
+    t.integer "turn_player_id"
+    t.boolean "draw"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["black_player_id"], name: "index_games_on_black_player_id"
+    t.index ["losing_player_id"], name: "index_games_on_losing_player_id"
+    t.index ["turn_player_id"], name: "index_games_on_turn_player_id"
+    t.index ["white_player_id"], name: "index_games_on_white_player_id"
+  end
 
   create_table "matches", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_matches_on_user_id"
+  end
+
+  create_table "pawns", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "pieces", force: :cascade do |t|
+    t.string "piece_type"
+    t.string "color"
+    t.string "image"
+    t.integer "x_location"
+    t.integer "y_location"
+    t.integer "game_id"
+    t.integer "player_id"
+    t.boolean "taken_piece"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "pieces", force: :cascade do |t|
+    t.string "piece_type"
+    t.string "color"
+    t.string "image"
+    t.integer "x_location"
+    t.integer "y_location"
+    t.integer "game_id"
+    t.integer "player_id"
+    t.boolean "taken_piece"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["game_id"], name: "index_pieces_on_game_id"
+    t.index ["piece_type"], name: "index_pieces_on_piece_type"
+    t.index ["player_id"], name: "index_pieces_on_player_id"
+    t.index ["x_location"], name: "index_pieces_on_x_location"
+    t.index ["y_location"], name: "index_pieces_on_y_location"
   end
 
   create_table "users", force: :cascade do |t|
