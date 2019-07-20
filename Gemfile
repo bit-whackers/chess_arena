@@ -83,3 +83,5 @@ end
 gem 'omniauth-facebook'
 gem "figaro"
 
+
+gem "font-awesome-rails"
