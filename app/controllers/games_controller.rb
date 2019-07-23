@@ -57,6 +57,7 @@ class GamesController < ApplicationController
 
   def game_params
     params.require(:game).permit(:title, :bkacl_player_id, :white_player_id, :losing_player_id, :turn_player_id)
+    #black is spelled wrong
   end
 
 end
