@@ -10,7 +10,7 @@
   </head>
 
   <body>
-
+   <div id="flex-content-container">
      <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -61,5 +61,40 @@
     <% end %>
 
   <%= yield %>
+  </div>
+
+    <div id="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-sm-3">
+            <b>Contacts</b>
+            <br/>
+            andystrube64@gmail.com
+            Travis86smith@gmail.com
+            Xandrixecklor@hotmail.com
+            <br />
+            <br />
+          </div>
+          <div class="col-12 col-sm-3">
+            <b>Contacts</b>
+            <br />
+            sarah.humphreys59@gmail.com
+            bentyh@hotmail.com
+            <br />
+          </div>
+          <div class="col-12 col-sm-3">
+            <b>Social</b>
+            <br />
+            <span class="fa fa-github-square"></span>
+            <%= link_to 'Project Github repo', 'https://github.com/bit-whackers/chess_arena' %>
+            <br />
+            <span class="fa fa-github-square"></span>
+            <%= link_to 'Team', 'https://github.com/orgs/bit-whackers/teams/whackers/members' %>
+          </div>
+        </div>
+      </div>
+    </div>  
+  </div>
+
   </body>
 </html>
