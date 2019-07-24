@@ -83,3 +83,4 @@ end
 gem 'omniauth-facebook'
 gem "figaro"
 
+gem 'rubocop', '~> 0.72.0', require: false
