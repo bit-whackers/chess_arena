@@ -7,49 +7,49 @@
 #   Character.create(name: 'Luke', movie: movies.first)
    
    #Pawns White 
-   Piece.create(piece_type: 'pawn', color: 'white' x_location: 0, y_location: 1)
-   Piece.create(piece_type: 'pawn', color: 'white' x_location: 1, y_location: 1)
-   Piece.create(piece_type: 'pawn', color: 'white' x_location: 2, y_location: 1)
-   Piece.create(piece_type: 'pawn', color: 'white' x_location: 3, y_location: 1)
-   Piece.create(piece_type: 'pawn', color: 'white' x_location: 4, y_location: 1)
-   Piece.create(piece_type: 'pawn', color: 'white' x_location: 5, y_location: 1)
-   Piece.create(piece_type: 'pawn', color: 'white' x_location: 6, y_location: 1)
-   Piece.create(piece_type: 'pawn', color: 'white' x_location: 7, y_location: 1)
+   Piece.create(piece_type: 'pawn', color: 'white', x_location: 0, y_location: 1)
+   Piece.create(piece_type: 'pawn', color: 'white', x_location: 1, y_location: 1)
+   Piece.create(piece_type: 'pawn', color: 'white', x_location: 2, y_location: 1)
+   Piece.create(piece_type: 'pawn', color: 'white', x_location: 3, y_location: 1)
+   Piece.create(piece_type: 'pawn', color: 'white', x_location: 4, y_location: 1)
+   Piece.create(piece_type: 'pawn', color: 'white', x_location: 5, y_location: 1)
+   Piece.create(piece_type: 'pawn', color: 'white', x_location: 6, y_location: 1)
+   Piece.create(piece_type: 'pawn', color: 'white', x_location: 7, y_location: 1)
    #Pawns Black
-   Piece.create(piece_type: 'pawn', color: 'black' x_location: 0, y_location: 6)
-   Piece.create(piece_type: 'pawn', color: 'black' x_location: 1, y_location: 6)
-   Piece.create(piece_type: 'pawn', color: 'black' x_location: 2, y_location: 6)
-   Piece.create(piece_type: 'pawn', color: 'black' x_location: 3, y_location: 6)
-   Piece.create(piece_type: 'pawn', color: 'black' x_location: 4, y_location: 6)
-   Piece.create(piece_type: 'pawn', color: 'black' x_location: 5, y_location: 6)
-   Piece.create(piece_type: 'pawn', color: 'black' x_location: 6, y_location: 6)
-   Piece.create(piece_type: 'pawn', color: 'black' x_location: 7, y_location: 6)
+   Piece.create(piece_type: 'pawn', color: 'black', x_location: 0, y_location: 6)
+   Piece.create(piece_type: 'pawn', color: 'black', x_location: 1, y_location: 6)
+   Piece.create(piece_type: 'pawn', color: 'black', x_location: 2, y_location: 6)
+   Piece.create(piece_type: 'pawn', color: 'black', x_location: 3, y_location: 6)
+   Piece.create(piece_type: 'pawn', color: 'black', x_location: 4, y_location: 6)
+   Piece.create(piece_type: 'pawn', color: 'black', x_location: 5, y_location: 6)
+   Piece.create(piece_type: 'pawn', color: 'black', x_location: 6, y_location: 6)
+   Piece.create(piece_type: 'pawn', color: 'black', x_location: 7, y_location: 6)
    #Rooks white
-   Piece.create(piece_type: 'rook', color: 'white' x_location: 7, y_location: 0)
-   Piece.create(piece_type: 'rook', color: 'white' x_location: 0, y_location: 0)
+   Piece.create(piece_type: 'rook', color: 'white', x_location: 7, y_location: 0)
+   Piece.create(piece_type: 'rook', color: 'white', x_location: 0, y_location: 0)
    #Rooks Black
-   Piece.create(piece_type: 'rook', color: 'black' x_location: 0, y_location: 7)
-   Piece.create(piece_type: 'rook', color: 'black' x_location: 7, y_location: 7)
+   Piece.create(piece_type: 'rook', color: 'black', x_location: 0, y_location: 7)
+   Piece.create(piece_type: 'rook', color: 'black', x_location: 7, y_location: 7)
    #knight white
-   Piece.create(piece_type: 'knight', color: 'white' x_location: 1, y_location: 0)
-   Piece.create(piece_type: 'knight', color: 'white' x_location: 6, y_location: 0)
+   Piece.create(piece_type: 'knight', color: 'white', x_location: 1, y_location: 0)
+   Piece.create(piece_type: 'knight', color: 'white', x_location: 6, y_location: 0)
    #knight black
-   Piece.create(piece_type: 'knight', color: 'black' x_location: 1, y_location: 7)
-   Piece.create(piece_type: 'knight', color: 'black' x_location: 6, y_location: 7)
+   Piece.create(piece_type: 'knight', color: 'black', x_location: 1, y_location: 7)
+   Piece.create(piece_type: 'knight', color: 'black', x_location: 6, y_location: 7)
    #bishop white
-   Piece.create(piece_type: 'bishop', color: 'white' x_location: 2, y_location: 0)
-   Piece.create(piece_type: 'bishop', color: 'white' x_location: 5, y_location: 0)
+   Piece.create(piece_type: 'bishop', color: 'white', x_location: 2, y_location: 0)
+   Piece.create(piece_type: 'bishop', color: 'white', x_location: 5, y_location: 0)
    #bishop black
-   Piece.create(piece_type: 'bishop', color: 'black' x_location: 2, y_location: 7)
-   Piece.create(piece_type: 'bishop', color: 'black' x_location: 5, y_location: 7)
+   Piece.create(piece_type: 'bishop', color: 'black', x_location: 2, y_location: 7)
+   Piece.create(piece_type: 'bishop', color: 'black', x_location: 5, y_location: 7)
    #queen white
-   Piece.create(piece_type: 'queen', color: 'white' x_location: 3, y_location: 0)
+   Piece.create(piece_type: 'queen', color: 'white', x_location: 3, y_location: 0)
    #queen black
-   Piece.create(piece_type: 'queen', color: 'black' x_location: 4, y_location: 7)
+   Piece.create(piece_type: 'queen', color: 'black', x_location: 4, y_location: 7)
    #king white
-   Piece.create(piece_type: 'king', color: 'white' x_location: 4, y_location: 0)
+   Piece.create(piece_type: 'king', color: 'white', x_location: 4, y_location: 0)
    #king black
-   Piece.create(piece_type: 'king', color: 'black' x_location: 3, y_location: 7)
+   Piece.create(piece_type: 'king', color: 'black', x_location: 3, y_location: 7)
 
 # Check the locations to make sure I put the pieces in the correct Location on the board
 #We need to add an image file to create a picture for the differnt pieces onces we land on what we want them to look like
