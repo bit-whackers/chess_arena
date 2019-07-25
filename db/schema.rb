@@ -36,13 +36,6 @@ ActiveRecord::Schema.define(version: 2019_07_19_045033) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
-    t.index ["user_id"], name: "index_matches_on_user_id"
-  end
-
-  create_table "pawns", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "pieces", force: :cascade do |t|
@@ -56,6 +49,11 @@ ActiveRecord::Schema.define(version: 2019_07_19_045033) do
     t.boolean "taken_piece"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["game_id"], name: "index_pieces_on_game_id"
+    t.index ["piece_type"], name: "index_pieces_on_piece_type"
+    t.index ["player_id"], name: "index_pieces_on_player_id"
+    t.index ["x_location"], name: "index_pieces_on_x_location"
+    t.index ["y_location"], name: "index_pieces_on_y_location"
   end
 
   create_table "users", force: :cascade do |t|
