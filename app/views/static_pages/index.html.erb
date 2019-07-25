@@ -1,1 +1,17 @@
 <h1>Chess Arena! Play Now!</h1>
+
+<br />
+
+<% @board.each do |row| %>
+  <div class = 'row'>
+   <% row.each do |cell| %>
+    <div class = 'col-sm cell'>
+      <% if cell.is_a?(Piece) %>
+       <%= cell.piece_type %>
+      <%end%> 
+    </div>
+   <%end%>
+
+ </div>
+<%end%>  
+
