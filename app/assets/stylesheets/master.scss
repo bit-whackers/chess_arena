@@ -1,8 +1,12 @@
 @import "bootstrap";
 @import "font-awesome";
 
-.cell {
+.box {
   height: 50px;
   width: 50px;
   border: 1px solid black;
+}
+
+.box-black {
+  background: black;
 }

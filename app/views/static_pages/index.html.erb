@@ -2,16 +2,28 @@
 
 <br />
 
-<% @board.each do |row| %>
+<% @board.each_with_index do |row, row_index| %>
   <div class = 'row'>
-   <% row.each do |cell| %>
-    <div class = 'col-sm cell'>
-      <% if cell.is_a?(Piece) %>
-       <%= cell.piece_type %>
-      <%end%> 
-    </div>
-   <%end%>
-
- </div>
+    <% row.each.each_with_index do |box, box_index| %>
+      <% if row_index.even? && box_index.odd?%>
+        <div class = "col-sm box box-black">
+          <% if box.is_a?(Piece) %>
+            <%= box.piece_type %>
+          <%end%> 
+        </div>
+      <% elsif row_index.odd? && box_index.even? %>
+        <div class = "col-sm box box-black">
+          <% if box.is_a?(Piece) %>
+            <%= box.piece_type %>
+          <%end%> 
+        </div>
+      <% else %>
+        <div class = "col-sm box">
+          <% if box.is_a?(Piece) %>
+            <%= box.piece_type %>
+          <%end%> 
+        </div>
+      <% end %>
+    <% end %>
+  </div>
 <%end%>  
-
