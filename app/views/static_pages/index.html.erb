@@ -5,13 +5,7 @@
 <% @board.each_with_index do |row, row_index| %>
   <div class = 'row'>
     <% row.each.each_with_index do |box, box_index| %>
-      <% if row_index.even? && box_index.odd?%>
-        <div class = "col-sm box box-black">
-          <% if box.is_a?(Piece) %>
-            <%= box.piece_type %>
-          <%end%> 
-        </div>
-      <% elsif row_index.odd? && box_index.even? %>
+      <% if (row_index.even? && box_index.odd?) || (row_index.odd? && box_index.even?) %>
         <div class = "col-sm box box-black">
           <% if box.is_a?(Piece) %>
             <%= box.piece_type %>
