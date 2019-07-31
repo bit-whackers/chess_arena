@@ -6,3 +6,11 @@
   width: 50px;
   border: 1px solid black;
 }
+
+.row{
+  z-index: 0;
+}
+
+.piece{
+  z-index: 1;
+}

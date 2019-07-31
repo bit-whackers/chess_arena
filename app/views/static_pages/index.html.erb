@@ -4,14 +4,21 @@
 
 <% @board.each do |row| %>
   <div class = 'row'>
-   <% row.each do |cell| %>
-    <div class = 'col-sm cell'>
-      <% if cell.is_a?(Piece) %>
-       <%= cell.piece_type %>
-      <%end%> 
-    </div>
-   <%end%>
+    <% row.each do |cell| %>
+      <div class = 'col-sm cell'>
+        <% if cell.is_a?(Piece) %>
+         <div class='piece'>
+            <%= cell.piece_type %>
+            <%= cell.color %>
+          </div>
+        <%end%>
+      </div>
+    <%end%>
+  </div>
+<%end%>
 
- </div>
-<%end%>  
-
+<script>
+  $( function() {
+    $(".piece").draggable();
+  });
+</script>
