@@ -8,18 +8,22 @@
       <% if (row_index.even? && box_index.odd?) || (row_index.odd? && box_index.even?) %>
         <div class = 'col-sm box box-black'>
           <% if box.is_a?(Piece) %>
-           <div class='piece'>
-              <%= box.piece_type %>
-              <%= box.color %>
+            <div class='piece'>
+              <%= box.piece_type %>  
+              <br/>
+              <%= "[#{box.y_location}]" %>
+              <%= "[#{box.x_location}]" %>
             </div>
           <% end %>
         </div>
       <% else %>
         <div class = 'col-sm box'>
           <% if box.is_a?(Piece) %>
-           <div class='piece'>
+            <div class='piece'>
               <%= box.piece_type %>
-              <%= box.color %>
+              <br/>
+              <%= "[#{box.y_location}]" %>
+              <%= "[#{box.x_location}]" %>
             </div>
           <% end %>
         </div>
@@ -31,5 +35,10 @@
 <script>
   $( function() {
     $(".piece").draggable();
+    $(".box").droppable({
+      drop: function( event, ui ) {
+        console.log('piece was dropped');
+      }
+    });
   });
 </script>
