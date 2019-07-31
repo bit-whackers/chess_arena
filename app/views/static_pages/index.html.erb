@@ -9,10 +9,12 @@
         <div class = 'col-sm box box-black'>
           <% if box.is_a?(Piece) %>
             <div class='piece'>
-              <%= box.piece_type %>  
-              <br/>
-              <%= "[#{box.y_location}]" %>
-              <%= "[#{box.x_location}]" %>
+              <div data-item-id=<%= box.id %>>
+                <%= box.piece_type %>  
+                <br/>
+                <%= "[#{box.y_location}]" %>
+                <%= "[#{box.x_location}]" %>
+              </div>  
             </div>
           <% end %>
         </div>
@@ -20,10 +22,12 @@
         <div class = 'col-sm box'>
           <% if box.is_a?(Piece) %>
             <div class='piece'>
-              <%= box.piece_type %>
-              <br/>
-              <%= "[#{box.y_location}]" %>
-              <%= "[#{box.x_location}]" %>
+              <div data-item-id=<%= box.id %>>
+                <%= box.piece_type %>
+                <br/>
+                <%= "[#{box.y_location}]" %>
+                <%= "[#{box.x_location}]" %>
+              </div>
             </div>
           <% end %>
         </div>
@@ -38,6 +42,7 @@
     $(".box").droppable({
       drop: function( event, ui ) {
         console.log('piece was dropped');
+        // console.log(ui.item.data('item-id'));
       }
     });
   });
