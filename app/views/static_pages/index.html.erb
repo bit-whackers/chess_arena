@@ -42,7 +42,14 @@
     $(".box").droppable({
       drop: function( event, ui ) {
         console.log('piece was dropped');
-        // console.log(ui.item.data('item-id'));
+        // console.log(ui.item.data('data-item-id'));
+        // console.log(ui.draggable);
+        // console.log(ui.draggable.data());
+        if(ui.item) {
+          console.log(ui.item);
+        } else {
+          console.log("It's not defined");
+        }
       }
     });
   });
