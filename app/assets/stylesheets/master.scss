@@ -2,8 +2,7 @@
 @import "font-awesome";
 
 .box {
-  height: 50px;
-  width: 50px;
+  height: 70px;
   border: 1px solid black;
 }
 
@@ -17,4 +16,11 @@
 
 .piece{
   z-index: 1;
+}
+
+.board-area {
+  width: 850px;
+  height: 850px;
+  margin-right:auto;
+  margin-left:auto;
 }
