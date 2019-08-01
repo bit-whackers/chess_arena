@@ -1,1 +1,35 @@
 <h1>Chess Arena! Play Now!</h1>
+
+<br />
+
+<% @board.each_with_index do |row, row_index| %>
+  <div class = 'row'>
+    <% row.each_with_index do |box, box_index| %>
+      <% if (row_index.even? && box_index.odd?) || (row_index.odd? && box_index.even?) %>
+        <div class = 'col-sm box box-black'>
+          <% if box.is_a?(Piece) %>
+           <div class='piece'>
+              <%= box.piece_type %>
+              <%= box.color %>
+            </div>
+          <% end %>
+        </div>
+      <% else %>
+        <div class = 'col-sm box'>
+          <% if box.is_a?(Piece) %>
+           <div class='piece'>
+              <%= box.piece_type %>
+              <%= box.color %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>
+
+<script>
+  $( function() {
+    $(".piece").draggable();
+  });
+</script>
