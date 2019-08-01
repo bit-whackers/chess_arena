@@ -13,8 +13,12 @@
           <div class = 'col-1 box box-black'>
             <% if box.is_a?(Piece) %>
               <div class='piece'>
-                <%= box.piece_type %>
-                <%= box.color %>
+                <div data-item-id=<%= box.id %>>
+                  <%= box.piece_type %>
+                  <br/>
+                  <%= "[#{box.y_location}]" %>
+                  <%= "[#{box.x_location}]" %>
+                </div>  
               </div>
             <% end %>
           </div>
@@ -22,8 +26,12 @@
           <div class = 'col-1 box'>
             <% if box.is_a?(Piece) %>
               <div class='piece'>
-                <%= box.piece_type %>
-                <%= box.color %>
+                <div data-item-id=<%= box.id %>>
+                  <%= box.piece_type %>
+                  <br/>
+                  <%= "[#{box.y_location}]" %>
+                  <%= "[#{box.x_location}]" %>
+                </div>  
               </div>
             <% end %>
           </div>
@@ -32,8 +40,19 @@
     </div>
   <% end %>
 </div>
+
 <script>
   $( function() {
     $(".piece").draggable();
+    $(".box").droppable({
+      drop: function( event, ui ) {
+        console.log('piece was dropped');
+        if(ui.item) {
+          console.log(ui.item);
+        } else {
+          console.log("It's not defined");
+        }
+      }
+    });
   });
 </script>
