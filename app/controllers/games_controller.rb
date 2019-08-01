@@ -56,7 +56,7 @@ class GamesController < ApplicationController
   private
 
   def game_params
-    params.require(:game).permit(:title, :bkacl_player_id, :white_player_id, :losing_player_id, :turn_player_id)
+    params.require(:game).permit(:title, :black_player_id, :white_player_id, :losing_player_id, :turn_player_id)
   end
 
 end

@@ -83,3 +83,13 @@ end
 gem 'omniauth-facebook'
 gem "figaro"
 
+
+
+gem "font-awesome-rails"
+
+gem 'rubocop', '~> 0.72.0', require: false
+
+gem "omniauth-google-oauth2"
+
+
+gem 'jquery-ui-rails'
