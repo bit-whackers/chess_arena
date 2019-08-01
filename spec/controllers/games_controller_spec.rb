@@ -2,7 +2,6 @@ require 'rails_helper'
 require_relative "../support/devise"
 
 RSpec.describe GamesController, type: :controller do
-  
   describe "static_pages#index" do
     it "should successfully show the page" do
       get :index
@@ -18,5 +17,10 @@ RSpec.describe GamesController, type: :controller do
     end
   end
 
-  
+  describe "games#index" do
+    it "should successfully show the page" do
+      get :index
+      expect(response).to have_http_status(:success)
+    end
+  end
 end
