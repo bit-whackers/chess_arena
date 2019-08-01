@@ -25,6 +25,7 @@ class GamesController < ApplicationController
 
   def show
     @game = Game.find(params[:id])
+    @board = Board.new.board #Allows us to get the index values and plug in the pieces on the views page
   end
 
   def edit
