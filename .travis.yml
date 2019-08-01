@@ -4,7 +4,7 @@ rvm:
 before_install:
   - gem install bundler -v '2.0.2'
 before_script:
-  - mysql -e 'create database test;'
+  - psql -c 'create database travis_ci_test;' -U postgres
 script: 
   - RAILS_ENV=test bundle exec rake db:migrate --trace
   - bundle exec rake db:test:prepare
