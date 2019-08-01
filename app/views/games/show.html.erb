@@ -4,10 +4,10 @@
 
 <div class= "board-area">
   <% @board.each_with_index do |row, row_index| %>
-    <div class = 'row'>
+    <div class = 'row justify-content-center'>
       <% row.each_with_index do |box, box_index| %>
         <% if (row_index.even? && box_index.odd?) || (row_index.odd? && box_index.even?) %>
-          <div class = 'col-sm box box-black'>
+          <div class = 'col-1 box box-black'>
             <% if box.is_a?(Piece) %>
               <div class='piece'>
                 <%= box.piece_type %>
@@ -16,7 +16,7 @@
             <% end %>
           </div>
         <% else %>
-          <div class = 'col-sm box'>
+          <div class = 'col-1 box'>
             <% if box.is_a?(Piece) %>
               <div class='piece'>
                 <%= box.piece_type %>
