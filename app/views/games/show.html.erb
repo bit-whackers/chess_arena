@@ -13,12 +13,16 @@
           <div class = 'col-1 box box-black'>
             <% if box.is_a?(Piece) %>
               <div class='piece'>
-                <div data-item-id=<%= box.id %>>
-                  <%= box.piece_type %>
-                  <br/>
-                  <%= "[#{box.y_location}]" %>
-                  <%= "[#{box.x_location}]" %>
-                </div>  
+                <div data-item-y_location=<%= box.y_location %>>
+                  <div data-item-x_location=<%= box.x_location %>>
+                    <%= box.piece_type %>
+                    <br/>
+                    <%= box.y_location %>
+                    <%= box.x_location %>
+                    <%# <%= "[#{box.y_location}]" %>
+                    <%# <%= "[#{box.x_location}]" %>
+                  </div>  
+                </div>
               </div>
             <% end %>
           </div>
@@ -26,12 +30,16 @@
           <div class = 'col-1 box'>
             <% if box.is_a?(Piece) %>
               <div class='piece'>
-                <div data-item-id=<%= box.id %>>
-                  <%= box.piece_type %>
-                  <br/>
-                  <%= "[#{box.y_location}]" %>
-                  <%= "[#{box.x_location}]" %>
-                </div>  
+                <div data-item-y_location=<%= box.y_location %>>
+                  <div data-item-x_location=<%= box.x_location %>>
+                    <%= box.piece_type %>
+                    <br/>
+                    <%= box.y_location %>
+                    <%= box.x_location %>
+                    <%# <%= "[#{box.y_location}]" %>
+                    <%# <%= "[#{box.x_location}]" %>
+                  </div>  
+                </div>
               </div>
             <% end %>
           </div>
@@ -47,15 +55,13 @@
     $(".box").droppable({
       drop: function( event, ui ) {
         console.log('piece was dropped');
-        if(ui.item) {
-          console.log(ui.item);
+
+        if(ui.draggable.context) {
+          console.log(ui.draggable.context);
         } else {
           console.log("It's not defined");
         }
       }
-      // $( this )
-      //   .addClass( "ui-state-highlight" )
-      // }
     });
   });
 </script>
