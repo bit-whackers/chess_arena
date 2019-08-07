@@ -13,7 +13,7 @@ class GamesController < ApplicationController
 
   def create
     @game = current_user.games.create(game_params)
-
+    @game.board_pieces
     if @game.valid?
       redirect_to games_path
     else
@@ -59,5 +59,6 @@ class GamesController < ApplicationController
   def game_params
     params.require(:game).permit(:title, :black_player_id, :white_player_id, :losing_player_id, :turn_player_id)
   end
+
 
 end
