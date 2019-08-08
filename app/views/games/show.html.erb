@@ -71,7 +71,17 @@
   <% end %>
 </div>
 <script>
-  $( function() {
-    $(".piece").draggable();
-  });
+  
+$('.piece').draggable({ containment: '.board-area'});
+$('.piece').droppable({
+    drop: function( event, ui ) {
+      $(ui.draggable).detach();
+      $(this).replaceWith(ui.draggable);
+      var draggablePiece = ui.draggable.attr(".piece");
+      var droppablePiece = $(this).attr(".piece");
+     
+  }     
+});
+
+
 </script>
