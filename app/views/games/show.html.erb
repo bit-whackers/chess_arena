@@ -10,9 +10,9 @@
     <div class = 'row justify-content-center'>
       <% row.each_with_index do |box, box_index| %>
         <% if (row_index.even? && box_index.odd?) || (row_index.odd? && box_index.even?) %>
-          <div class = 'col-1 box box-black'>
+          <div id = 'droppable' class = 'col-1 box box-black'>
             <% if box.is_a?(Piece) %>
-              <div class='piece'>
+              <div id = 'draggable' class='piece'>
                 <% if box.piece_type == 'pawn' && box.color == 'white' %>
                   <%= image_tag 'wP.png' %>
                 <% elsif box.piece_type == 'pawn' && box.color == 'black' %>
@@ -38,9 +38,9 @@
             <% end %>
           </div>
         <% else %>
-          <div class = 'col-1 box'>
+          <div id = 'w_square' class = 'col-1 box'>
             <% if box.is_a?(Piece) %>
-              <div class='piece'>
+              <div class='piece' onmousedown="getallowedmoves(4)">
                 <% if box.piece_type == 'pawn' && box.color == 'white' %>
                   <%= image_tag 'wP.png' %>
                 <% elsif box.piece_type == 'pawn' && box.color == 'black' %>
@@ -70,8 +70,27 @@
     </div>
   <% end %>
 </div>
+
+
 <script>
+  function  getallowedmoves (clicked) {
+    console.log(clicked)
+  };
   $( function() {
-    $(".piece").draggable();
-  });
-</script>
+    $( ".piece" ).draggable();
+    $( ".box" ).droppable({
+      accept: ".piece",
+      classes: {
+        "ui-droppable-active": "ui-state-active",
+        "ui-droppable-hover": "ui-state-hover"
+      },
+      drop: function( event, ui ) {
+        console.log('dropped')
+        $( this )
+          .addClass( "ui-state-highlight" )
+          .find( "p" )
+            .html( "Dropped!" );
+      }
+    });
+  } );
+  </script>
