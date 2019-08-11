@@ -54,13 +54,14 @@
     $(".piece").draggable();
     $(".box").droppable({
       drop: function( event, ui ) {
-        console.log('piece was dropped');
-
-        if(ui.draggable.context) {
-          console.log(ui.draggable.context);
-        } else {
-          console.log("It's not defined");
-        }
+        // console.log('piece was dropped');
+        // console.log($(ui.draggable.context).find('div'));
+        console.log($(ui.draggable.context).children('div'));
+        // if(ui.draggable.context) {
+        //   console.log(ui.draggable.context);
+        // } else {
+        //   console.log("It's not defined");
+        // }
       }
     });
   });
