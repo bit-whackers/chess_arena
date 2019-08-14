@@ -107,8 +107,8 @@
          .html( "Dropped!" );
      $(ui.draggable).detach().css({top: 0, left: 0});
      $(this).replaceWith(ui.draggable);
-     var draggablePiece = ui.draggable.attr("id");
-     var droppablePiece = $(this).attr("pos");
+     var draggablePiece = ui.draggable.attr();
+     var droppablePiece = $(this).attr();
          }
     });
   } );
