@@ -95,21 +95,9 @@
   $( function() {
     $( ".piece" ).draggable();
     $( ".piece" ).droppable({
-      accept: ".piece",
-      classes: {
-        "ui-droppable-active": "ui-state-active",
-        "ui-droppable-hover": "ui-state-hover"
-      },
       drop: function( event, ui ) {
-        //console.log(ui.position);
-       $(ui.draggable).detach().css({top: 0, left: 0});
-      // console.log(ui.position);
-       console.log(ui.offset);
-        $( this ) 
-          .addClass( "ui-state-highlight" )
-          .find( "p" )
-            .html( "Dropped!" );
-           $(this).replaceWith(ui.draggable); 
+     $(ui.draggable).detach().css({top: 0, left: 0});
+     $(this).replaceWith(ui.draggable); 
       }
     });
   } );
