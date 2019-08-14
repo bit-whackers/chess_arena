@@ -94,14 +94,6 @@ def board_pieces
    Piece.create(game_id: id, piece_type: 'blank', color: 'black', x_location: 6, y_location: 5)
    Piece.create(game_id: id, piece_type: 'blank', color: 'black', x_location: 7, y_location: 5)
 
-   Piece.create(game_id: id, piece_type: 'blank', color: 'black', x_location: 0, y_location: 6)
-   Piece.create(game_id: id, piece_type: 'blank', color: 'black', x_location: 1, y_location: 6)
-   Piece.create(game_id: id, piece_type: 'blank', color: 'black', x_location: 2, y_location: 6)
-   Piece.create(game_id: id, piece_type: 'blank', color: 'black', x_location: 3, y_location: 6)
-   Piece.create(game_id: id, piece_type: 'blank', color: 'black', x_location: 4, y_location: 6)
-   Piece.create(game_id: id, piece_type: 'blank', color: 'black', x_location: 5, y_location: 6)
-   Piece.create(game_id: id, piece_type: 'blank', color: 'black', x_location: 6, y_location: 6)
-   Piece.create(game_id: id, piece_type: 'blank', color: 'black', x_location: 7, y_location: 6)
 
 end
 end
