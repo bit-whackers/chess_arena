@@ -49,7 +49,7 @@
         <% else %>
           <div id = 'w_square' class = 'col-1 box'>
             <% if box.is_a?(Piece) %>
-              <div class='piece' onmousedown="getallowedmoves(4)">
+              <div class='piece' onmousedown="getallowedmoves(20000)">
                 <% if box.piece_type == 'pawn' && box.color == 'white' %>
                   <%= image_tag 'wP.png' %>
                 <% elsif box.piece_type == 'pawn' && box.color == 'black' %>
@@ -95,10 +95,21 @@
   $( function() {
     $( ".piece" ).draggable();
     $( ".piece" ).droppable({
+          accept: ".piece",
+      classes: {
+        "ui-droppable-active": "ui-state-active",
+        "ui-droppable-hover": "ui-state-hover"
+      },
       drop: function( event, ui ) {
+      $( this )
+      .addClass( "ui-state-highlight" )
+       .find( "p" )
+         .html( "Dropped!" );
      $(ui.draggable).detach().css({top: 0, left: 0});
-     $(this).replaceWith(ui.draggable); 
-      }
+     $(this).replaceWith(ui.draggable);
+     var draggablePiece = ui.draggable.attr("id");
+     var droppablePiece = $(this).attr("pos");
+         }
     });
   } );
 
