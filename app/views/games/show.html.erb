@@ -10,9 +10,9 @@
     <div class = 'row justify-content-center'>
       <% row.each_with_index do |box, box_index| %>
         <% if (row_index.even? && box_index.odd?) || (row_index.odd? && box_index.even?) %>
-          <div class = 'col-1 box box-black'>
+          <div id = 'droppable' class = 'col-1 box box-black'>
             <% if box.is_a?(Piece) %>
-              <div class='piece'>
+              <div id = 'draggable' class='piece'>
                 <% if box.piece_type == 'pawn' && box.color == 'white' %>
                   <%= image_tag 'wP.png' %>
                 <% elsif box.piece_type == 'pawn' && box.color == 'black' %>
@@ -33,14 +33,23 @@
                   <%= image_tag 'bB.png' %>
                 <% elsif box.piece_type == 'bishop' && box.color == 'white' %>  
                   <%= image_tag 'wB.png' %>
+                <% elsif box.piece_type == 'blank' && box.color == 'black' %>
+                  <%= "     " %>
+                  <br/>
+                  <%= "     " %>
+                  <br/>
+                  <%= "     " %>
+                  <br/>
+                  <%= "     " %>
+                  
                 <% end %>
               </div>
             <% end %>
           </div>
         <% else %>
-          <div class = 'col-1 box'>
+          <div id = 'w_square' class = 'col-1 box'>
             <% if box.is_a?(Piece) %>
-              <div class='piece'>
+              <div class='piece' onmousedown="getallowedmoves(4)">
                 <% if box.piece_type == 'pawn' && box.color == 'white' %>
                   <%= image_tag 'wP.png' %>
                 <% elsif box.piece_type == 'pawn' && box.color == 'black' %>
@@ -61,6 +70,14 @@
                   <%= image_tag 'bB.png' %>
                 <% elsif box.piece_type == 'bishop' && box.color == 'white' %>  
                   <%= image_tag 'wB.png' %>
+                <% elsif box.piece_type == 'blank' && box.color == 'black' %>
+                <%= "     " %>
+                <br/>
+                <%= "     " %>
+                <br/>
+                <%= "     " %>
+                <br/>
+                <%= "     " %>
                 <% end %>
               </div>
             <% end %>
@@ -71,17 +88,31 @@
   <% end %>
 </div>
 <script>
-  
-$('.piece').draggable({ containment: '.board-area'});
-$('.piece').droppable({
-    drop: function( event, ui ) {
-      $(ui.draggable).detach();
-      $(this).replaceWith(ui.draggable);
-      var draggablePiece = ui.draggable.attr(".piece");
-      var droppablePiece = $(this).attr(".piece");
-     
-  }     
-});
+
+  function  getallowedmoves (clicked) {
+    console.log(clicked)
+  };
+  $( function() {
+    $( ".piece" ).draggable();
+    $( ".piece" ).droppable({
+      accept: ".piece",
+      classes: {
+        "ui-droppable-active": "ui-state-active",
+        "ui-droppable-hover": "ui-state-hover"
+      },
+      drop: function( event, ui ) {
+        //console.log(ui.position);
+       $(ui.draggable).detach().css({top: 0, left: 0});
+      // console.log(ui.position);
+       console.log(ui.offset);
+        $( this ) 
+          .addClass( "ui-state-highlight" )
+          .find( "p" )
+            .html( "Dropped!" );
+           $(this).replaceWith(ui.draggable); 
+      }
+    });
+  } );
 
 
 </script>
